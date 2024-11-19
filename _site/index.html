@@ -1,67 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Chaos Pages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabinator</title>
     <link rel="stylesheet" href="./assets/css/style.css">
-  </head>
-  <body>
-    <h1>Chaos Proyect</h1>
-    <h3>Recopilacion de los proyectos de Gabriel Solotorevsky</h3>
-    <table>
-      <tr>
-        <th>Nombre</th>
-        <th>Descripcion</th>
-      </tr>
-      <tr>
-        <th><a href="https://github.com/Gonanf/gabinator_android_remaster">Gabinator Android Remaster</a></th>
-        <th>Aplicacion cliente de android de Screen Sharing</th>
-      </tr>
-      <tr>
-        <th><a href="https://github.com/Gonanf/gabinator_desktop_remaster">Gabinator Desktop Remaster</a></th>
-        <th>Aplicacion server de escritorio (Windows y Linux(X11)) de Screen Sharing</th>
-      </tr>
-      <tr>
-        <th><a href="https://github.com/Gonanf/Gabinator_Android">Gabinator Android</a></th>
-        <th>Aplicacion cliente original de android de Screen Sharing</th>
-      </tr>
-      <tr>
-        <th><a href="https://github.com/Gonanf/Gabinator_Desktop">Gabinator Desktop </a></th>
-        <th>Aplicacion server original de escritorio de Screen Sharing</th>
-      </tr>
-      <tr>
-        <th><a href="https://gonanf.github.io/Ashera">Ashera</a></th>
-        <th>Pagina web estatico sobre sorteos de productos</th>
-      </tr>
-      <tr>
-        <th><a href="https://gonanf.github.io/Gabinator">Gabinator</a></th>
-        <th>Pagina web estatico de presentacion de las herramientas Gabinator</th>
-      </tr>
-      <tr>
-        <th><a href="https://github.com/Gonanf/A2C">A2C</a></th>
-        <th>(<keyword>DEPRECADO</keyword>) Lenguaje de programacion escrito en C#</th>
-      </tr>
-      <tr>
-        <th><a href="https://github.com/Gonanf/JJW">JJW</a></th>
-        <th>Sistema web de mensajeria</th>
-      </tr>
-      <tr>
-        <th><a href="https://github.com/Gonanf/PNShell">PNShell</a></th>
-        <th>Sistema de hacking cliente</th>
-      </tr>
-      <tr>
-        <th><a href="https://github.com/Gonanf/BackShell">BackShell</a></th>
-        <th>Sistema de hacking servidor</th>
-      </tr>
-      <tr>
-        <th><a href="https://github.com/Gonanf/gabinator_android_remaster">JJW</a></th>
-        <th>Sistema web de mensajeria</th>
-      </tr>
-      <tr>
-        <th><a href="https://github.com/Gonanf/Raycasting-Render-SFML2">Raycasting Render</a></th>
-        <th>Sistema de Raycasting</th>
-      </tr>
-    </table>
-  </body>
+</head>
+<body>
+    <h1>Gabinator</h1>
+    <hr>
+    <br>
+    <h2>Gabinator es un proyecto de Screen Sharing entre un dispositivo Windows o Linux como servidor y un dispositivo Android como cliente</h2>
+    <div style="display: flex;gap: 20px;justify-content: center;align-items: center;">
+        <div style="background-color: grey;display: flex;flex-direction: column;justify-content: center;justify-items: center;align-items: center;">
+            <h2>Gabinator Android</h2>
+            <h4>El cliente del proyecto gabinator, interpreta los datos enviados de Gabinator Desktop</h4>
+            <a href="https://github.com/Gonanf/gabinator_android_remaster/releases/tag/alpha-v0.1.0">Link de descarga <b>(ALPHA)</b></a>
+        </div>
+        <div style="background-color: gray;display: flex;flex-direction: column;justify-content: center;justify-items: center;align-items: center;">
+            <h2>Gabinator Desktop</h2>
+            <h4>El servidor del proyecto gabinator, obtiene, comprime y envia los frames del dispositivo hacia Gabinator Android</h4>
+            <a href="https://github.com/Gonanf/gabinator_desktop_remaster/releases/tag/alpha-v0.1.0">Link de descarga <b>(ALPHA)</b></a>
+        </div>
+    </div>
+    <br>
+    <h2><b>USO</b></h2>
+    <hr>
+    <h3><b>Modo USB:</b></h3>
+    <ul>
+        <li><h4>Seguir los pasos para <a href="https://developer.android.com/studio/run/win-usb">obtener los controladores ADB de google</a></h4></li>
+        <li><h4>Instalar Gabinator Android y ejecutar</h4></li>
+        <li>
+            <ul>
+                <li>
+                    <h4>Instalar Gabinator Desktop y ejecutar el siguiente comando para encontrar dispositivos compatibles</h4>
+                </li>
+                <li>
+                    <pre class="highlight"><code><span class="c1">gabinator_desktop_r -M AOA -G </span></code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <li>
+                    <h4>Elegir un dispositivo y colocar su PID y VID de la siguiente manera</h4>
+                </li>
+                <li>
+                <pre class="highlight"><code><span class="c1">gabinator_desktop_r -M AOA -P (PID) -V (VID) -C </span></code></pre>
+                </li>
+                <li>Luego de esto se empezara a conectar a Gabinator Android</li>
+            </ul>
+        </li>
+        <li>En Gabinator Android apretar el boton USB y aceptar permisos</li>
+    </ul>
+    <h3><b>Modo TCP:</b></h3>
+    <ul>
+        <li><h4>Instalar Gabinator Android y ejecutar</h4></li>
+        <li>
+            <ul>
+                <li>
+                    <h4>Instalar Gabinator Desktop y ejecutar el siguiente comando para iniciar el servidor TCP</h4>
+                </li>
+                <li>
+                    <pre class="highlight"><code><span class="c1">gabinator_desktop_r -M TCP -C</span> </code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>En Gabinator Android apretar el boton TCP, colocar la IP que aparece en el lado de Gabinator Desktop y conectar </li>
+    </ul>
+
+</body>
 </html>
